@@ -7,13 +7,13 @@ import asyncio, datetime, time
 
 
 ACCEPTED_TEXT = "Hey {user}\n\nYour Request For {chat} Is Accepted ✅"
-START_TEXT = "Hai {}\n\nI am Auto Request Accept Bot With Working For All Channel. Add Me In Your Channel To Use"
+START_TEXT = "Hai {}\n\nI am Auto Request Accept Bot @wrrohit02 With Working For All Channel. Add Me In Your Channel To Use"
 
-API_ID = int(env.get('API_ID'))
-API_HASH = env.get('API_HASH')
-BOT_TOKEN = env.get('BOT_TOKEN')
-DB_URL = env.get('DB_URL')
-ADMINS = int(env.get('ADMINS'))
+API_ID = int(env.get('26829892'))
+API_HASH = env.get('fcbc942ecc37b61a81d052a4b71de265')
+BOT_TOKEN = env.get('8147350098:AAEFIvEvRXUTQEZvy9zC9sqQS2mfRRJGmAU')
+DB_URL = env.get('mongodb+srv://yaxow33436_db_user:Q9buxBrK7ygR0lam@cluster11.80e2ait.mongodb.net/?retryWrites=true&w=majority&appName=Cluster11L')
+ADMINS = int(env.get('8257649811'))
 
 Dbclient = AsyncIOMotorClient(DB_URL)
 Cluster = Dbclient['Cluster0']
@@ -27,8 +27,8 @@ async def start_handler(c, m):
     user_id = m.from_user.id
     if not await Data.find_one({'id': user_id}): await Data.insert_one({'id': user_id})
     button = [[        
-        InlineKeyboardButton('Updates', url='https://t.me/mkn_bots_updates'),
-        InlineKeyboardButton('Support', url='https://t.me/MKN_BOTZ_DISCUSSION_GROUP')
+        InlineKeyboardButton('Updates', url='https://t.me/motumoviess'),
+        InlineKeyboardButton('Support', url='https://t.me/motulinks')
     ]]
     return await m.reply_text(text=START_TEXT.format(m.from_user.mention), disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(button))
           
